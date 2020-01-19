@@ -1,0 +1,40 @@
+.navbar {
+  height: 48px;
+  padding: 4px !important;
+}
+
+.navbar .navbar-brand {
+  padding: 0;
+}
+
+.navbar .navbar-toggler {
+  padding: 0;
+  border: none;
+  border-radius: unset;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.navbar .navbar-toggler .navbar-toggler-icon {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 40px;
+}
+
+.row.title {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.row.title .action {
+  text-align: right;
+}
+
+.row.content {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}

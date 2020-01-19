@@ -1,0 +1,90 @@
+<%- layout('/layout/layout') %>
+
+<style>
+    .products {
+
+    }
+
+    .products td {
+        vertical-align: middle;
+    }
+
+    button {
+        float: right;
+    }
+</style>
+
+<div class="container">
+    <div class="row title">
+        <div class="col title">Kosár szerkesztés</div>
+    </div>
+    <form method="POST" action="/baskets/<%= basket._id %>/edit">
+        <div class="row content">
+            <div class="col">
+                <div class="form-group">
+                    <label>Név</label>
+                    <input name="name" type="text" class="form-control" value="<%= basket.name %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Méret</label>
+                    <select id="name" name="size" class="form-control">
+                        <% Sizes.forEach(function (size) { %>
+                        <option value="<%= size.code %>" <%= basket.size ===  size.code ? 'selected' : '' %>><%= size.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="material">Anyag</label>
+                    <select id="material" name="material" class="form-control">
+                        <% Materials.forEach(function (material) { %>
+                        <option value="<%= material.code %>" <%= basket.material ===  material.code ? 'selected' : '' %>><%= material.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="color">Szín</label>
+                    <select id="color" name="color" class="form-control">
+                        <% Colors.forEach(function (color) { %>
+                            <option value="<%= color.code %>"<%= basket.color ===  color.code ? 'selected' : '' %>><%= color.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col title">
+                Termékek
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped products">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" class="name">Név</th>
+                        <th scope="col" class="quantity">Mennyiség</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% products.forEach(function (product) { %>
+                        <tr>
+                            <td class="name"><%= product.name %></td>
+                            <td class="quantity">
+                                <input name="item-<%= product._id %>" class="form-control" type="number" value="<%= basket.getItemQuantityForProduct(product) %>">
+                            </td>
+                        </tr>
+                    <% }) %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary float-right">Mentés</button>
+            </div>
+        </div>
+    </form>
+</div>

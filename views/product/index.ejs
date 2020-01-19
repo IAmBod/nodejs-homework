@@ -1,0 +1,35 @@
+<%- layout('/layout/layout') %>
+
+<div class="container">
+    <div class="row title">
+        <div class="col title">Termékek</div>
+        <div class="col action">
+            <a href="/products/create">Létrehoz</a>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col">
+            <table class="table table-striped baskets">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="name">Név</th>
+                    <th scope="col" class="actions text-right text-md-center text-lg-left">Műveletek</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% products.forEach(function (product) { %>
+                    <tr>
+                        <td class="name"><%= product.name %></td>
+                        <td class="actions text-right text-md-center text-lg-left">
+                            <a href="/products/<%= product.id %>/edit">Szerkeszt</a>
+                            <form action="/products/<%= product.id %>/delete" method="POST" class="d-inline-block">
+                                <a href="#" class="delete-product">Töröl</a>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

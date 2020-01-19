@@ -1,0 +1,35 @@
+<%- layout('/layout/layout') %>
+
+<div class="container">
+    <div class="row title">
+        <div class="col title">Kosarak</div>
+        <div class="col action">
+            <a href="/baskets/create">Létrehoz</a>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col">
+            <table class="table table-striped baskets">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="name">Név</th>
+                    <th scope="col" class="actions text-right text-md-center text-lg-left">Műveletek</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% baskets.forEach(function (basket) { %>
+                    <tr>
+                        <td class="name"><%= basket.name %></td>
+                        <td class="actions text-right text-md-center text-lg-left">
+                            <a href="/baskets/<%= basket.id %>/edit">Szerkeszt</a>
+                            <form action="/baskets/<%= basket.id %>/delete" method="POST" class="d-inline-block">
+                                <a href="#" class="delete-basket">Töröl</a>
+                            </form>
+                        </td>
+                    </tr>
+                <% });%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<%- layout('/layout/layout') %>
+
+<div class="container">
+    <div class="row title">
+        <div class="col title">Termék létrehozás</div>
+    </div>
+    <form method="POST" action="/products/<%= product.id %>/edit">
+        <div class="row content">
+            <div class="col">
+                <div class="form-group">
+                    <label>Név</label>
+                    <input name="name" type="text" class="form-control" value="<%= product.name %>">
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Mentés</button>
+            </div>
+        </div>
+    </form>
+</div>

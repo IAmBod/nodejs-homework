@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= blocks.title || 'Piroska' %></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-reboot.css">
+
+    <%- blocks.styles %>
+
+    <!-- Bootstrap js -->
+    <script src="/popper/umd/popper.js"></script>
+    <script src="/jquery/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+
+    <script src="/javascripts/scripts.js"></script>
+
+    <%- blocks.scripts %>
+</head>
+<body>
+
+<%- partial('header') -%>
+
+<%- body -%>
+
+<%- partial('footer') %>
+
+</body>
+</html>
