@@ -14,8 +14,6 @@
 # File-based project format
 *.iws
 
-
-
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
