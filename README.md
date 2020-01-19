@@ -12,7 +12,7 @@ The project uses mocha and chai for testing.
 Run tests with: 
 `npm test`
 
-# Documentation(in hungarian)
+# Documentation(in Hungarian)
 Since it was made, many features were thrown away because of the time limits and low passing requirements of the subject.
 https://docs.google.com/document/d/15p5nMXC-vusHYaW8IhCzT3h6DguYipL1LSoFenddXmQ/edit?usp=sharing
 
