@@ -1,15 +1,13 @@
-#Introduction
+# Introduction
+NodeJS homework
 
+# Installation
+Building: `docker-compose build`
 
-#Installation
-`npm install`
+# Running
+Running: `docker-compose up`
 
-#Running
-Dev mode: `npm run dev`
-
-Prod mode(soha nem volt kipróbálva): `npm start`
-
-#Testing
+# Testing
 The project uses mocha and chai for testing.
 Run tests with: 
 `npm test`
